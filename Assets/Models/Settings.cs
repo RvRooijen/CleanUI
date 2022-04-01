@@ -1,5 +1,8 @@
 namespace Models
 {
+    /// <summary>
+    /// Data
+    /// </summary>
     public class Settings : IModel
     {
         public int GridLayoutRows = 2;

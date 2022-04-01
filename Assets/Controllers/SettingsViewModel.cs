@@ -3,6 +3,9 @@ using Views;
 
 namespace Controllers
 {
+    /// <summary>
+    /// Responsible for changes to the model
+    /// </summary>
     public class SettingsViewModel : ViewModel<IView<Settings>, Settings>
     {
         public SettingsViewModel(Settings model) : base(model)

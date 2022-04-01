@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 namespace Views
 {
+    /// <summary>
+    /// Unity view, register yourself to the ViewModel
+    /// </summary>
     public class SettingsView : MonoBehaviour, IView<Settings>
     {
         private SettingsViewModel settingsViewModel;
