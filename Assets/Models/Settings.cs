@@ -1,6 +1,6 @@
 namespace Models
 {
-    public class Settings
+    public class Settings : IModel
     {
         public int GridLayoutRows = 2;
         public int GridLayoutColumns = 2;
