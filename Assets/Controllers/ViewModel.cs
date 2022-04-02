@@ -4,19 +4,19 @@ using Views;
 
 namespace Controllers
 {
-    public class ViewModel<V,M> 
-        where V : IView<M> 
+    public class ViewModel<M,VM>
         where M : IModel
+        where VM : ViewModel<M, VM>
     {
         protected readonly M Model;
-        private readonly List<V> views = new List<V>();
+        private readonly List<IView<M, VM>> views = new List<IView<M, VM>>();
 
         protected ViewModel(M model)
         {
             Model = model;
         }
         
-        public void AddView(V view)
+        public void AddView(IView<M, VM> view)
         {
             views.Add(view);
         }

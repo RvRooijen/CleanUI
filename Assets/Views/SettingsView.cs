@@ -7,10 +7,7 @@ using UnityEngine.UI;
 
 namespace Views
 {
-    /// <summary>
-    /// Unity view, register yourself to the ViewModel
-    /// </summary>
-    public class SettingsView : MonoBehaviour, IView<Settings>
+    public class SettingsView : MonoBehaviour, IView<Settings, SettingsViewModel>
     {
         private SettingsViewModel settingsViewModel;
         
@@ -21,9 +18,9 @@ namespace Views
         [SerializeField]
         private TMP_InputField gridRowsInputField;
 
-        public void AssignViewModel(ViewModel<IView<Settings>, Settings> viewModel)
+        public void AssignViewModel(SettingsViewModel viewModel)
         {
-            settingsViewModel = viewModel as SettingsViewModel;
+            settingsViewModel = viewModel;
             
             cameraCycleInputField.onValueChanged.AddListener(newValue => settingsViewModel.CameraCycleDelaySliderValueChanged(int.Parse(newValue)));
             gridColumnsInputField.onValueChanged.AddListener(newValue => settingsViewModel.GridColumnsInputFieldValueChanged(int.Parse(newValue)));
