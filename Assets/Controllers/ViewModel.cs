@@ -13,7 +13,7 @@ namespace Controllers
         protected readonly M Model;
         private readonly List<IView<M, VM>> views = new List<IView<M, VM>>();
         private readonly Dictionary<string, List<IGenObserver>> observers = new Dictionary<string, List<IGenObserver>>();
-        private readonly Dictionary<string, IExpressionStore> memberCache = new();
+        private readonly Dictionary<string, IExpressionStore> memberCache = new Dictionary<string, IExpressionStore>();
 
         protected ViewModel(M model)
         {
